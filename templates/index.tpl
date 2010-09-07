@@ -1,26 +1,14 @@
 <{* 顯示是smarty變量識符裏的用*包含的文字為註釋內容 *}>
 <{include file="header.tpl"}><{*頁面頭*}>
 
-database1:<hr>
-<{section name=loop loop=$News_CH}>
-ID：<{$News_CH[loop].newsID}><br>
-TITLE：<{$News_CH[loop].newsTitle}><br><hr>
-<{sectionelse}>
-對不起，沒有任何新聞輸入！
-<{/section}>
-
-database2:<hr>
-<{section name=loop loop=$News_IN}>
-ID：<{$News_IN[loop].newsID}><br>
-TITLE：<{$News_IN[loop].newsTitle}><br><hr>
-<{sectionelse}>
-對不起，沒有任何新聞輸入！
-<{/section}>
-
-database3:<hr>
-<{section name=loop loop=$News_MU}>
-ID：<{$News_MU[loop].newsID}><br>
-TITLE：<{$News_MU[loop].newsTitle}><br><hr>
+<{section name=loop loop=$articles}>
+<div id="article_bg">
+<div id="article_title">标题：<a href=<{$articles[loop].article_link}> > <{$articles[loop].article_title}> </a></div>
+<div id="article_info">简介：<{$articles[loop].article_info}></div>
+<div>
+<span id="article_time">发表时间：<{$articles[loop].article_time}> </span> 
+<span id="article_author">作者：<{$articles[loop].article_author}></span></div>
+</div>
 <{sectionelse}>
 對不起，沒有任何新聞輸入！
 <{/section}>
