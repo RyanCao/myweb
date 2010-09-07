@@ -1,18 +1,15 @@
 <?php
 /*********************************************
 *
-* 文件名： index.php
-* 作 用： 显示实例程序
-*
-* 作 者： 大师兄
-* Email： teacherli@163.com
-
-* 修 正： forest
+* filename	: index.php
+* author	: ryancao
+* time		: 2010/9/7
 *********************************************/
-include_once("./comm/Smarty.class.php"); //包含smarty类文件
+
+include_once("./common/Smarty.class.php");			//include  smarty
 //======= @@@@help 1.这里是将DB_Sql类文件包含进来，下面一行是将一个中文截取类包含到当前页==============================
-include_once("./comm/db_mysql.inc.php"); //包含数据库操作类
-include_once("./comm/csubstr.inc"); //包含中文截取类
+include_once("./common/database.inc.php");			//include db.class
+include_once("./common/csubstr.inc.php"); //包含中文截取类
 //=======================================
 define("NUM", 5); //定义每次显示的新闻条数
 
@@ -29,9 +26,9 @@ $db = new DB_Sql(); //实例化一个DB类
 $db->Host = "localhost"; // 数据库主机名
 $db->Database = "news"; //数据库名称
 $db->User = "root"; //用户名
-$db->Password = ""; //密码
+$db->Password = "123"; //密码
 
-$db->connet(); //进行数据库连接
+$db->connect(); //进行数据库连接
 
 //这里将处理国内新闻部分
 $strQuery = "SELECT iNewsID, vcNewsTitle FROM tb_news_ch ORDER BY iNewsID DESC";
