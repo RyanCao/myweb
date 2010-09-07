@@ -44,8 +44,8 @@ while($db->next_record() && $i > 0)
 
 //=========@@@@ 5. csubstr()是我们使用的一个中文截取===========================================================
 
-$array[] = array("NewsID"=>csubstr($db->f("iNewsID"), 0, 20),
-"NewsTitle"=>csubstr($db->f("vcNewsTitle"), 0, 20));
+$array[] = array("newsID"=>$db->f("iNewsID"),
+"newsTitle"=>$db->f("vcNewsTitle"));
 
 $i--;
 }
@@ -63,8 +63,8 @@ $db->query($strQuery);
 $i = NUM;
 while($db->next_record() && $i > 0)
 {
-$array[] = array("NewsID"=>csubstr($db->f("iNewsID"), 0, 20),
-"NewsTitle"=>csubstr($db->f("vcNewsTitle"), 0, 20));
+$array[] = array("newsID"=>$db->f("iNewsID"),
+"newsTitle"=>$db->f("vcNewsTitle"));
 
 $i--;
 }
@@ -79,8 +79,8 @@ $db->query($strQuery);
 $i = NUM;
 while($db->next_record() && $i > 0)
 {
-$array[] = array("NewsID"=>csubstr($db->f("iNewsID"), 0, 20),
-"NewsTitle"=>csubstr($db->f("vcNewsTitle"), 0, 20));
+$array[] = array("newsID"=>$db->f("iNewsID"),
+"newsTitle"=>$db->f("vcNewsTitle"));
 
 $i--;
 }
